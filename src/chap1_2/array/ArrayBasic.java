@@ -6,15 +6,15 @@ import java.util.Scanner;
 public class ArrayBasic {
 
     public static void main(String[] args) {
-        
+
         // 배열 특징
         // 1. 동종 모음 구조 (같은 타입끼리만 저장 가능)
         // 2. 생성시의 크기가 불변함 (값을 안넣으면 기본값 초기화)
-        
-        // 변수는 램의 스택이라는 좁은 공간에 산다. // 배열은 힙에 산다.
+
+        // 변수는 램의 스택이라는 좁은 공간에 산다. // 배열은 힙에 산다. 힙의 주소를 스택에 저장
         // 1. 배열 변수 선언 (스택에 변수를 선언)
         int[] numbers; // 4byte? (x)
-        
+
         // 2. 배열을 생성 (힙에 데이터를 저장)
         numbers = new int[5];
 
@@ -25,7 +25,7 @@ public class ArrayBasic {
         numbers[3] = numbers[0] * 2;
         numbers[4] = 99;
 
-        System.out.println("numbers = " + numbers);
+        System.out.println("numbers = " + numbers); // 주소값 출력
         System.out.println(Arrays.toString(numbers));
 
         // 배열 길이 확인
@@ -38,7 +38,7 @@ public class ArrayBasic {
             System.out.println("데이터 = "+numbers[i]);
         }
         System.out.println("==========================");
-        
+
         // enhanced for loop
         for (int n : numbers) {
             System.out.println("n = " + n);
@@ -86,7 +86,6 @@ public class ArrayBasic {
 
         Scanner[] scanners = new Scanner[4];
         System.out.println(Arrays.toString(scanners));
-
 
     }// end main
 
