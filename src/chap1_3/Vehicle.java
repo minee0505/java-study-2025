@@ -17,7 +17,7 @@ public class Vehicle {
     // 연료 잔량
     int fuel;
 
-    // 복합 속성 (부품 속성)
+    // 복합 속성 (부품 속성) alt + enter
     Owner owner; // 자동차 주인
     /*
         {
