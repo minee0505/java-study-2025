@@ -2,18 +2,19 @@ package chapter1_5.player;
 
 public class Player {
 
-    String nickName;
+    String nickName; // 필드
     int level;
     int hp;
 
     // 생성자: 캐릭터가 태어날 때 가져야할 값들을 세팅
-    Player(String nick) {
+    Player(String nick) { // 매개변수 : 지역변수
+//        this.nickName = nickName; // 앞에 this 붙이면 필드랑 파라미터 이름 같게 할 수 있음/ this 붙인건 필드, this 없는건 매개변수
         nickName = nick;
         level = 1;
         hp = 100;
     }
 
-    // 자바의 모든 메서드는 첫번째 파라미터가 생략되어있음
+    // 자바의 모든 메서드는 첫번째 파라미터(this)가 생략되어있음, Player this
     // 다른 플레이어를 때릴 수 있는 기능
     void attack(Player targetPlayer) {
 

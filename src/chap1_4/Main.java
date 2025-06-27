@@ -4,6 +4,7 @@ package chap1_4;
 // import chap1_4.cake.Banana;
 // import chap1_4.cake.Grape;
 // import chap1_4.juice.Apple;
+// import chap1_4.cake.*
 
 import java.util.Scanner;
 
