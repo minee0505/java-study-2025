@@ -13,6 +13,8 @@ public class Member {
     int age;
     LocalDateTime registerDate; // 회원가입 일시
 
+    boolean isDeleted;
+
     // 생성자: 객체가 처음 생성될 때 필드를 초기화
     public Member(int age, String email, String password, String memberName, Gender gender) {
         this.password = password;
@@ -35,5 +37,21 @@ public class Member {
                 ", age=" + age +
                 ", registerDate=" + registerDate +
                 '}';
+    }
+
+    public void inform() {
+        String formattedDate = registerDate.format(
+                java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+        );
+        System.out.printf("이름: %s, 이메일: %s, 성별: %s, 나이: %d세, 가입일: %s\n",
+                memberName, email, gender, age, formattedDate);
+    }
+
+    public void changeNewPassword(String newPassword) {
+        this.password = newPassword;
+    }
+
+    public boolean isPasswordMatch(String inputPassword) {
+        return this.password.equals(inputPassword);
     }
 }

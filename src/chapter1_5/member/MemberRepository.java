@@ -45,7 +45,7 @@ public class MemberRepository {
     /**
      * 회원 리스트에 새 회원을 추가합니다.
      *
-     * @param newMember 저장소에 추가될 회원 객체
+     * @param newMember 추가할 새로운 멤버의 정보를 담고 있는 Member 객체
      */
     void addMember(Member newMember){
         // 배열에 push를 적용
@@ -75,15 +75,40 @@ public class MemberRepository {
      */
     // 탐색 기능 (회원을 찾는 기능)
     Member findMemberByEmail(String targetEmail){
-        for (Member member : memberList) {
-            if (targetEmail.equals(member.email)) {
-                return member;
-            }
-        }
-        return null; // 탐색에 실패한 경우
+        int index = findIndexByEmail(targetEmail);
+        return index != -1 ? memberList[index] : null; 
     }
 
+    /**
+     * 주어진 이메일 주소가 중복되었는지 확인합니다.
+     * 이메일이 중복된 경우 true를 반환하고, 그렇지 않으면 false를 반환합니다.
+     *
+     * @param inputEmail 확인할 이메일 주소
+     * @return 이메일이 중복된 경우 true, 중복되지 않은 경우 false
+     */
     boolean isDuplicateEmail(String inputEmail){
         return findMemberByEmail(inputEmail) != null;
+    }
+    
+    int findIndexByEmail(String email) {
+        for (int i = 0; i < memberList.length; i++) {
+            if (memberList[i].email.equals(email)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void removeMember(String email) {
+        // 삭제 대상의 인덱스를 알아와야 함
+        int index = findIndexByEmail(email);
+        for (int i = index; i < memberList.length -1 ; i++) {
+            memberList[i] = memberList[ i + 1];
+        }
+        Member[] temp = new Member[memberList.length -1];
+        for (int i = 0; i < temp.length; i++) {
+            temp[i] = memberList[i];
+        }
+        memberList = temp;
     }
 }
