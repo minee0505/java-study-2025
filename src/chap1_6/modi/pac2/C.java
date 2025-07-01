@@ -2,7 +2,7 @@ package chap1_6.modi.pac2;
 
 import chap1_6.modi.pac1.A;
 
-// A 클래스와 다른 패키지
+// A 클래스와 다른 패키지 => public만 접근 가능함
 public class C {
 
     C() {

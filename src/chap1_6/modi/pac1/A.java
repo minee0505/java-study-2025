@@ -17,6 +17,8 @@ public class A {
 
     // 생성자
     public A() {
+
+        // 같은 클래스 내부에서는 private, public, default 의미가 없음. 다 접근 가능함.
         this(1.5);
         f1 = 1;
         f2 = 2;
