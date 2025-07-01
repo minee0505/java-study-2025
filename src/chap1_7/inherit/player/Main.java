@@ -1,5 +1,16 @@
 package chap1_7.inherit.player;
 
+/*
+                       object
+                        |
+                      player
+              /         |      \
+            Warrior   Mage   Hunter
+            |     \     |
+      Berserker    warMage
+
+*/
+
 public class Main {
     public static void main(String[] args) {
         Warrior warrior = new Warrior("주차왕파킹");
