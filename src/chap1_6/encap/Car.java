@@ -11,6 +11,7 @@ public class Car {
         this.model = model;
     }
 
+    // setter 없이 getter만 만들면 값 영원히 못바꿈
     public String getModel () {
         return model;
     }
