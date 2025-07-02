@@ -7,10 +7,12 @@ public class Warrior extends Player {
     int rage; // 분노게이지
 
 
-
-
     public Warrior(String nickName) {
+//        super(); 생략되어 있음, 마치 this()처럼
         super(nickName, 100);
+//        super.nickName;
+//        super.level;
+//        super.hp;
         this.rage = 0;
     }
 
