@@ -37,6 +37,15 @@ public class Main {
         System.out.println("car1 = " + car1);
         if(car1 != null) car1.accelerate();
 
+        System.out.println("=======================");
+
+        Sonata car2 = (Sonata) carShop.exportCar(3000);
+        car2.accelerate();
+        car2.joinHyundaiMembership();
+
+        cars[0] = car2;
+
+
     }
 
 

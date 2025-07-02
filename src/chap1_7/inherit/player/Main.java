@@ -11,6 +11,8 @@ package chap1_7.inherit.player;
 
 */
 
+
+
 public class Main {
     public static void main(String[] args) {
         // 상속은 힙영역에 워리어 객체 먼저 생성되는게 아니라 슈퍼클래스(부모 객체 먼저 생성됨)
@@ -44,5 +46,11 @@ public class Main {
 
         hunter.showStatus();
         hunter.attack();
+        System.out.println("======================");
+
+        mage.fireBall(warrior);
+        mage.fireBall(hunter);
+        mage.fireBall(new Mage("법사짱"));
+
     }
 }
