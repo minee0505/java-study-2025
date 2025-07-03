@@ -32,8 +32,8 @@ public class Main {
         System.out.printf("c2.x: %d, c2.y: %d\n", c2.x, c2.y);
 
         System.out.println("============");
-        double result = Calculator.calCircleArea(5);
-        System.out.println(result);
+//        double result = Calculat+or.calCircleArea(5);
+//        System.out.println(result);
 
         Calculator sharpCalc = new Calculator();
         sharpCalc.customizeColor("노랑색");
