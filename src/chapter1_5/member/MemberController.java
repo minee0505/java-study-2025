@@ -2,6 +2,8 @@ package chapter1_5.member;
 
 import java.util.Scanner;
 
+import static chapter1_9.static_.util.InputUtils.promptNumber;
+
 // 역할: 회원관리 앱의 입출력을 담당
 public class MemberController {
 
@@ -123,11 +125,11 @@ public class MemberController {
         String password = prompt("# 패스워드: ");
         String memberName = prompt("# 이름: ");
         Gender gender = inputCorrectGender();
-        String ageStr = prompt("# 나이: ");
+        int age = promptNumber("# 나이: ");
 
         // 회원 배열에 추가
         mr.addMember(new Member(
-                Integer.parseInt(ageStr),
+                age,
                 email,
                 password,
                 memberName,
@@ -212,6 +214,20 @@ public class MemberController {
      */
     String prompt(String message) {
         System.out.println(message);
-        return sc.nextLine();
+
+        while (true) {
+
+            try {
+                String str1 = sc.nextLine(); // 정수를 문자열로 입력
+                int n2 = Integer.parseInt(str1); // 문자열을 정수로 변환
+                return sc.nextLine();
+            } catch (NumberFormatException e) {
+//                System.out.println(e.getMessage());
+//                e.printStackTrace(); // 예외처리 안했을 때 뜨던 빨간메시지를 보여줌
+                System.out.println("정수로만 입력하세요!");
+            } catch (Exception e) { // 마지막에는 그냥 Exception e 상위니까 위로 순서 올라가면 자식이 무시당함 (보통 RuntimeException 사용)
+                System.out.println("알 수 없는 에러 발생! 조치 후 점검 하겠습니다!");
+            }
+        }
     }
 }

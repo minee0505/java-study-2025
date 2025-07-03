@@ -12,5 +12,18 @@ public class InputUtils {
         return sc.nextLine();
     }
 
+    //입력한 문자열 정수를 정수로 안전하게 변환하는 메서드
+    public static int promptNumber(String message) {
+        while (true) {
+            try {
+                System.out.println(message);
+                String str = sc.nextLine();
+                return Integer.parseInt(str);
+            } catch (NumberFormatException e) {
+                System.out.println("정수형 숫자만 입력해주세요!");
+            }
+        }
+    }
+
 
 }
