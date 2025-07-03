@@ -1,6 +1,7 @@
 package chap1_10.inter;
 
-public class Rabbit implements Pet, Wild{
+// extends는 반드시 implements 앞에
+public class Rabbit extends Animal implements Pet, Wild{
 
     @Override
     public void handle() {

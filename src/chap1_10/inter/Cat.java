@@ -1,6 +1,6 @@
 package chap1_10.inter;
 
-public class Cat implements Pet, Huntable{
+public class Cat extends Animal implements Pet, Huntable{
 
     @Override
     public void handle() {
